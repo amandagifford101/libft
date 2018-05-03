@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 15:39:17 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/21 20:56:07 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/02 01:17:47 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_itoa(int n)
 	
 	negative = 0;
 	len = int_len(n);
-	printf("%d\n", len);
 	str = (char*)malloc(sizeof(char) * len);
 	if (n == '-')
 		negative = 1;

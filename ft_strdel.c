@@ -6,17 +6,13 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/25 19:52:26 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/25 19:56:38 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/01 15:13:51 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
-	if (as != NULL)
-	{
-		free(*as);
-		**as = NULL;
-	}
-}
+	ft_memdel((void **)as);
+}	

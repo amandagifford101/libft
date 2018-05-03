@@ -6,13 +6,13 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/25 19:48:50 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/25 19:51:21 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/01 15:10:49 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size);
+char	*ft_strnew(size_t size)
 {
 	char *str;
 

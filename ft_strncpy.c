@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 20:30:28 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/28 19:10:26 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/01 13:37:44 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	while (src[i] && i < n)
 	{
 		dst[i] = src[i];
-		len++;
+		i++;
 	}
 	while (i < n)
 	{

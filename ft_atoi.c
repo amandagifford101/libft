@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 15:20:35 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/23 20:38:13 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/01 22:27:41 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_atoi(const char *str)
 	int negative;
 
 	i = 0;
-	while(str[i] < '!')
-		i++;
+	while(str[i])
+	{
 		if (str[i] == '-')
 			negative = 1;
 		while (str[i] >= '0' && str[i] <= '9')
@@ -26,9 +26,9 @@ int	ft_atoi(const char *str)
 			nbr = (nbr * 10) + (str[i] - '0');
 			i++;
 		}
-		if (negative == 1)
-				return (-nbr);
-		else
-				return (nbr);
-		}
+	}
+	if (negative == 1)
+			return (-nbr);
+	else
+			return (nbr);
 }

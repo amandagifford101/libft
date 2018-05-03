@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/25 19:37:26 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/28 17:46:41 by agifford         ###   ########.fr       */
+/*   Updated: 2018/04/30 12:02:24 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *str;
+	void *ptr;
 
-	if (str == NULL)
-		return (NULL);
-	ft_bzero(str, size)
-	return (str);
+	ptr = malloc(size);
+	ft_bzero(ptr, size);
+	return (ptr);
 }

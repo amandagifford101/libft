@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/25 19:24:51 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/25 19:36:34 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/01 15:38:59 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,11 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (n > 0)
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-		return (s1 - s2);
+	size_t i;
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] != '\0' && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-
-int	main(void)
-{
-	char fuck[10] = "Hello";
-	char shit[10] = "yesplease";
-	int a = 0;
-
-	a = ft_strncmp(fuck, shit, 3);
-	printf("return of ft_strncmp is %i", a);
-	return (0);
-}	
-

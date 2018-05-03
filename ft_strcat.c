@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 11:29:08 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/21 20:58:56 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/02 01:22:37 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,4 @@ char	*ft_strcat(char *s1, const char *s2)
 	}
 	else
 		return (s1);
-}
-
-int		main(int argc, char **argv)
-{
-	if (argc == 3)
-		ft_strcat(argv[1], argv[2]);
-	return (0);
 }

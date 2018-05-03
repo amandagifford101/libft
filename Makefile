@@ -6,7 +6,7 @@
 #    By: agifford <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/16 14:03:24 by agifford          #+#    #+#              #
-#    Updated: 2018/04/29 15:28:18 by agifford         ###   ########.fr        #
+#    Updated: 2018/05/02 01:18:58 by agifford         ###   ########.fr        #
 #                                                                              #
 #  #
 
@@ -20,6 +20,7 @@ ft_memchr.c \
 ft_memcmp.c \
 ft_strlen.c \
 ft_strdup.c \
+ft_strndup.c \
 ft_strcpy.c \
 ft_strncpy.c \
 ft_strcat.c \
@@ -63,7 +64,8 @@ ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
-ft_lstnew.c \
+int_len.c \
+#ft_lstnew.c \
 ft_lstdelone.c \
 ft_lstdel.c \
 ft_lstadd.c \
@@ -72,13 +74,11 @@ ft_lstmap.c
 
 HEAD = libft.h
 
-COMPILE = -Wall -Werror -Wextra
-
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(COMPILE) $(SRC)
-	ar -rc $(NAME).a *.o
+	gcc -c $(SRC) $(NAME).h
+	ar rc $(NAME).a *.o
 	ranlib $(NAME).a
 
 clean:
