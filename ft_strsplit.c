@@ -6,53 +6,35 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/28 09:33:06 by agifford          #+#    #+#             */
-/*   Updated: 2018/05/02 01:07:31 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/08 15:40:28 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		word_count(char const *s, char c)
-{
-	size_t	i;
-	size_t	words;
-
-	i = 0;
-	words = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-	 		i++;
-		if (s[i] != '\0')
-			words++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (words);
-}
-
 char	**ft_strsplit(char const *s, char c)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 	char	**tab;
-	
-	tab = (char **)malloc(sizeof(char *) * (word_count(s, c)) + 1);
-	if (tab == NULL)
+
+	i = 0;
+	k = 0;
+	if (!(tab = (char **)malloc(sizeof(char *) * (ft_word_count(s, c)) + 1)))
 		return (NULL);
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		while (s[i] == c)
 			i++;
 		j = i;
-		while (s[i] && s[i] != c)
+		while (s[i] != '\0' && s[i] != c)
 			i++;
 		if (i > j)
-		{
-			tab[i] = ft_strndup(s + j, i - j);
-			i++;
-		}
+			tab[k] = ft_strndup(s + j, i - j);
+		if (s[i] != '\0')
+			k++;
 	}
-	tab[i] = NULL;
+	tab[ft_word_count(s, c)] = NULL;
 	return (tab);
 }

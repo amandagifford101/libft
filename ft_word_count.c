@@ -1,43 +1,32 @@
 /* ************************************************************************** */
-
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_len.c                                          :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/20 11:25:16 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/20 11:25:26 by agifford         ###   ########.fr       */
+/*   Created: 2018/05/07 21:21:37 by agifford          #+#    #+#             */
+/*   Updated: 2018/05/08 00:22:18 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	int_len(int n)
+int		ft_word_count(char const *s, char c)
 {
-		int i;
-		int negative;
-		int len;
-		int	neg_len;
-		int len_one;
+	size_t	i;
+	size_t	words;
 
-		i = 0;
-		len = 0;
-		if (n == '-')
-			negative = 1;
-		while ((n > 10) || (n < -10))
-		{
-			n = (n / 10);
+	i = 0;
+	words = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
 			i++;
-		}
-	//	i++;
-		len_one = 1;
-		len = i + 1;		//NULL Char
-		neg_len = i + 2;		//NULL + negative sign
-		if (n == 0)
-			return (len_one);
-		else if (negative == 1)
-			return (neg_len);
-		else
-			return (len);
+		if (s[i] != '\0')
+			words++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (words);
 }

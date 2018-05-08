@@ -6,16 +6,16 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/25 19:24:51 by agifford          #+#    #+#             */
-/*   Updated: 2018/05/01 15:38:59 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/07 23:59:45 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
+
 	i = 0;
 	if (n == 0)
 		return (0);

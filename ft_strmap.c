@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/25 20:09:47 by agifford          #+#    #+#             */
-/*   Updated: 2018/05/01 15:24:23 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/07 23:55:00 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char *str;
-	unsigned int i;
-	
+	char			*str;
+	unsigned int	i;
+
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s)) + 1);
 	if (str == NULL)
@@ -29,4 +29,3 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	str[i] = '\0';
 	return (str);
 }
-

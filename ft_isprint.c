@@ -6,11 +6,13 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 21:45:39 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/21 20:55:46 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/05 17:23:52 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

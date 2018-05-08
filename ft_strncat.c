@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 12:37:02 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/21 21:02:55 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/08 00:12:26 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,16 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	int i;
 	int j;
-	int	str1_len;
-	int	str2_len;
-	
+
 	j = 0;
 	i = 0;
-	str1_len = 0;
-	str2_len = 0;
-	str1_len = ft_strlen(s1);
-	str2_len = ft_strlen(s2);
-	if (str1_len >= str2_len)
+	i = ft_strlen(s1);
+	while (s2[j] && n > 0)
 	{
-		while (n > 0)
-		{
-			s1[i] = s2[j];
-			i++;
-			j++;
-			n--;
-		}
-		return (s1);
+		s1[i + j] = s2[j];
+		j++;
+		n--;
 	}
-	else
-		return (s1);
-}	
+	s1[i + j] = '\0';
+	return (s1);
+}

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_int_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/25 21:28:04 by agifford          #+#    #+#             */
-/*   Updated: 2018/05/08 00:04:09 by agifford         ###   ########.fr       */
+/*   Created: 2018/05/08 00:04:41 by agifford          #+#    #+#             */
+/*   Updated: 2018/05/08 00:19:14 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+int	ft_int_len(int n)
 {
-	size_t	i;
-	char	*tmp;
+	int i;
+	int negative;
+	int len;
+	int	neg_len;
+	int len_one;
 
-	if (s)
-	{
-		i = 0;
-		while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-			i++;
-		tmp = (char *)s + i;
-		if (*tmp == '\0')
-			return (ft_strdup(tmp));
-		i = ft_strlen(tmp);
-		i--;
-		while (tmp[i] == ' ' || tmp[i] == '\t' || tmp[i] == '\n')
-			i--;
-		return (ft_strndup(tmp, i + 1));
-	}
-	return (NULL);
+	i = 0;
+	len = 0;
+	negative = 0;
+	if (n == '-')
+		negative = 1;
+	while (((n > 10) || (n < -10)) && i++)
+		n = (n / 10);
+	len_one = 1;
+	len = i + 1;
+	neg_len = i + 2;
+	if (n == 0)
+		return (len_one);
+	else if (negative == 1)
+		return (neg_len);
+	else
+		return (len);
 }

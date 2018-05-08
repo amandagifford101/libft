@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_isword.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/25 21:28:04 by agifford          #+#    #+#             */
-/*   Updated: 2018/05/08 00:04:09 by agifford         ###   ########.fr       */
+/*   Created: 2018/05/08 13:20:03 by agifford          #+#    #+#             */
+/*   Updated: 2018/05/08 14:16:29 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+int	ft_isword(char *str)
 {
-	size_t	i;
-	char	*tmp;
+	int i;
 
-	if (s)
+	i = 0;
+	while (str)
 	{
-		i = 0;
-		while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-			i++;
-		tmp = (char *)s + i;
-		if (*tmp == '\0')
-			return (ft_strdup(tmp));
-		i = ft_strlen(tmp);
-		i--;
-		while (tmp[i] == ' ' || tmp[i] == '\t' || tmp[i] == '\n')
-			i--;
-		return (ft_strndup(tmp, i + 1));
+		if (str[i] != ' ' &&
+			str[i] != '\n' &&
+			str[i] != '\t' &&
+			str[i] != '\v' &&
+			str[i] != '\f' &&
+			str[i] != '\r')
+			return (1);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }

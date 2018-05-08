@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 11:29:08 by agifford          #+#    #+#             */
-/*   Updated: 2018/05/02 01:22:37 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/03 18:33:01 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,17 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	int i;
-	int j;
-	size_t	len_s1;
-	size_t	len_s2;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	if (len_s1 >= len_s2)
+	i = ft_strlen(s1);
+	while (s2[j])
 	{
-		while (len_s2 > 0)			
-		{
-			s1[i] = s2[j];
-			i++;
-			j++;
-			len_s2--;
-		}
-		return (s1);
+		s1[i + j] = s2[j];
+		j++;
 	}
-	else
-		return (s1);
+	s1[i + j] = '\0';
+	return (s1);
 }

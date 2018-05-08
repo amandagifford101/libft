@@ -6,7 +6,7 @@
 /*   By: agifford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 15:20:55 by agifford          #+#    #+#             */
-/*   Updated: 2018/04/21 21:02:36 by agifford         ###   ########.fr       */
+/*   Updated: 2018/05/07 23:54:18 by agifford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
-
